@@ -1,0 +1,35 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: calendario_vhost
+    username: calendario
+    password: '{cipher}AQAZQkOBaKZm3WWO2PD6jkC/pFPnzJMNc3LoBQvoCfytVy3+8Pq7T6C+IGO5PEZTBqu+SReNQO5D40IIfJEbMWPbWnussdRoJiNib6ftthIzBk9P72B1J98EWmQtT9Kxnr8qUo5NCJw5FXjFjqFBtsz9uHayK7W4pSbvcjvrFK1dqZcLBuVvvj0F7RLD8m0/RE3CgXmelGODAG9MoheTQTASc26JXQViHLKqdR5IWpg2CRLgXzGLNo9YlFyJzEKYPt4P5avAaGMRW23fP8fsi6SaKar48QZv6QO5EWgZil1E7XikKyPii3aO75AWYzNG8jThDPJINTstiqDO1JveST7vEyC359MHj8E6Dlydf/+upFFfKLOXRHspHsaNyJ7Oc8U='
+  zipkin:
+    base-url: 'http://localhost:8033'
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  datasource:
+    url: jdbc:postgresql://localhost:5432/oauth_server
+    username: '{cipher}AQAZQkOBaKZm3WWO2PD6jkC/pFPnzJMNc3LoBQvoCfytVy3+8Pq7T6C+IGO5PEZTBqu+SReNQO5D40IIfJEbMWPbWnussdRoJiNib6ftthIzBk9P72B1J98EWmQtT9Kxnr8qUo5NCJw5FXjFjqFBtsz9uHayK7W4pSbvcjvrFK1dqZcLBuVvvj0F7RLD8m0/RE3CgXmelGODAG9MoheTQTASc26JXQViHLKqdR5IWpg2CRLgXzGLNo9YlFyJzEKYPt4P5avAaGMRW23fP8fsi6SaKar48QZv6QO5EWgZil1E7XikKyPii3aO75AWYzNG8jThDPJINTstiqDO1JveST7vEyC359MHj8E6Dlydf/+upFFfKLOXRHspHsaNyJ7Oc8U='
+    password: '{cipher}AQAZQkOBaKZm3WWO2PD6jkC/pFPnzJMNc3LoBQvoCfytVy3+8Pq7T6C+IGO5PEZTBqu+SReNQO5D40IIfJEbMWPbWnussdRoJiNib6ftthIzBk9P72B1J98EWmQtT9Kxnr8qUo5NCJw5FXjFjqFBtsz9uHayK7W4pSbvcjvrFK1dqZcLBuVvvj0F7RLD8m0/RE3CgXmelGODAG9MoheTQTASc26JXQViHLKqdR5IWpg2CRLgXzGLNo9YlFyJzEKYPt4P5avAaGMRW23fP8fsi6SaKar48QZv6QO5EWgZil1E7XikKyPii3aO75AWYzNG8jThDPJINTstiqDO1JveST7vEyC359MHj8E6Dlydf/+upFFfKLOXRHspHsaNyJ7Oc8U='
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
