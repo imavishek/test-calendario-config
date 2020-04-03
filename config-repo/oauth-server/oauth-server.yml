@@ -2,3 +2,12 @@ spring:
   cloud:
     bus:
       enabled: true
+
+message:
+  password_saved_success: Password saved successfully.
+  password_saved_failed: Failed to save password.
+  bad-credential: Invalid username and password.
+  invalid-oauth-client: Invalid Oauth client details.
+  access-token-revoke-success: Access token revoked successfully.
+  access-token-revoke-failed: Failed to revoke access token.
+      
