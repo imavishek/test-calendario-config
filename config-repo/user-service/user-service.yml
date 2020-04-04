@@ -31,6 +31,7 @@ message:
   registration-confirm-success: Your profile has been activated successfully. Password also changed.
   registration-confirm-failed: Unable to active account.
   email-exist: Email already exist.
+  valid-token: Token is valid.
   invalid-token: Invalid token.
   invalid-access-token: Invalid access token.
   access-denied: User is not authorized to access the requested resource.
