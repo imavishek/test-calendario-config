@@ -26,6 +26,7 @@ spring:
       use-new-id-generator-mappings: false
     properties:
       hibernate:
+          order_inserts: true
           generate_statistics: true
           default_schema: public
           dialect: org.hibernate.dialect.PostgreSQLDialect

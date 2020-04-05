@@ -39,4 +39,6 @@ message:
   invalid-token: Invalid token.
   invalid-access-token: Invalid access token.
   access-denied: User is not authorized to access the requested resource.
+  slot-create-success: Slots created successfully.
+  slot-create-failed: Unable to create slots.
       
