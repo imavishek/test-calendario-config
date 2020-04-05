@@ -17,6 +17,10 @@ mail:
     subject: Confirm Your Calendario Account
     templateName: registration-confirm
     url: http://172.16.8.177:4200/#/app/password/
+  registration-success:
+    from: calendario.online.2020@gmail.com
+    subject: Calendario Account Active
+    templateName: registration-success
 url:
   oauth_server_save_password: http://oauth-server/savePassword
 time:
