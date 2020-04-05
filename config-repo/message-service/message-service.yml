@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    bus:
+      enabled: true
+  mail:
+    username: calendario.online.2020@gmail.com
+    password: "{cipher}AQCbB4RRXqZ3j2oH6vkSXfVE0x9T8lm616VGOkhLkGhpj7PSLAN3SZxiYOxeJber7eyg5BPWcfsuaXf+O9N/uCktkvoR4w8fP8zoXqOqXI6ASbZqK1fxgZD2r8TTiP0/vuZw/nv1AkJJWk4yuj18kmaMuUct3KcMOqD9EB/9a0zA6Z9lAsrG7FjMjKSQzm1+ukxPuzYPAy5orazpvwc9yWtNfHN0iBfpDXeWfYTh/sQgTqyGkQYR98IVOoOLQPRjaAeXstvCA4lqsUHl/EwlROc66LjGlGVyB0xg7q6hyQnc2632NgfNpqGPP6DyFxdEcAHG9DHH3dYaDO2GfEApt6L8FnrXXTPaei7XJAzJoMGtYXkzQBeaFOK5r1tMp7718Ao="
+    host: smtp.gmail.com
+    port: 587
+    logging: true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        transport:
+          protocol: smtp
