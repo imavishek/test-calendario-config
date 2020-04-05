@@ -21,6 +21,10 @@ mail:
     from: calendario.online.2020@gmail.com
     subject: Calendario Account Active
     templateName: registration-success
+  event-notification:
+    from: calendario.online.2020@gmail.com
+    subject: Meeting Scheduled Successfully
+    templateName: event-notification
 url:
   oauth_server_save_password: http://oauth-server/savePassword
 time:
