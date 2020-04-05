@@ -41,4 +41,6 @@ message:
   access-denied: User is not authorized to access the requested resource.
   slot-create-success: Slots created successfully.
   slot-create-failed: Unable to create slots.
+  event-create-success: Event created successfully.
+  event-create-failed: Unable to create event.
       
