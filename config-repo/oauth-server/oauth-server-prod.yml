@@ -1,0 +1,50 @@
+spring:
+  cloud:
+    gcp:
+      project-id: aashayein
+      sql:
+        enabled: true
+        database-name: oauth_server
+        instance-connection-name: aashayein:us-central1:calendario
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    virtual-host: calendario_vhost
+    username: calendario
+    password: '{cipher}AQAZQkOBaKZm3WWO2PD6jkC/pFPnzJMNc3LoBQvoCfytVy3+8Pq7T6C+IGO5PEZTBqu+SReNQO5D40IIfJEbMWPbWnussdRoJiNib6ftthIzBk9P72B1J98EWmQtT9Kxnr8qUo5NCJw5FXjFjqFBtsz9uHayK7W4pSbvcjvrFK1dqZcLBuVvvj0F7RLD8m0/RE3CgXmelGODAG9MoheTQTASc26JXQViHLKqdR5IWpg2CRLgXzGLNo9YlFyJzEKYPt4P5avAaGMRW23fP8fsi6SaKar48QZv6QO5EWgZil1E7XikKyPii3aO75AWYzNG8jThDPJINTstiqDO1JveST7vEyC359MHj8E6Dlydf/+upFFfKLOXRHspHsaNyJ7Oc8U='
+  zipkin:
+    base-url: 'http://zipkin'
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  datasource:
+    url: jdbc:postgresql://google/oauth_server?cloudSqlInstance=aashayein:us-central1:calendario&socketFactory=com.google.cloud.sql.postgres.SocketFactory
+    username: '{cipher}AQAZQkOBaKZm3WWO2PD6jkC/pFPnzJMNc3LoBQvoCfytVy3+8Pq7T6C+IGO5PEZTBqu+SReNQO5D40IIfJEbMWPbWnussdRoJiNib6ftthIzBk9P72B1J98EWmQtT9Kxnr8qUo5NCJw5FXjFjqFBtsz9uHayK7W4pSbvcjvrFK1dqZcLBuVvvj0F7RLD8m0/RE3CgXmelGODAG9MoheTQTASc26JXQViHLKqdR5IWpg2CRLgXzGLNo9YlFyJzEKYPt4P5avAaGMRW23fP8fsi6SaKar48QZv6QO5EWgZil1E7XikKyPii3aO75AWYzNG8jThDPJINTstiqDO1JveST7vEyC359MHj8E6Dlydf/+upFFfKLOXRHspHsaNyJ7Oc8U='
+    password: '{cipher}AQAZQkOBaKZm3WWO2PD6jkC/pFPnzJMNc3LoBQvoCfytVy3+8Pq7T6C+IGO5PEZTBqu+SReNQO5D40IIfJEbMWPbWnussdRoJiNib6ftthIzBk9P72B1J98EWmQtT9Kxnr8qUo5NCJw5FXjFjqFBtsz9uHayK7W4pSbvcjvrFK1dqZcLBuVvvj0F7RLD8m0/RE3CgXmelGODAG9MoheTQTASc26JXQViHLKqdR5IWpg2CRLgXzGLNo9YlFyJzEKYPt4P5avAaGMRW23fP8fsi6SaKar48QZv6QO5EWgZil1E7XikKyPii3aO75AWYzNG8jThDPJINTstiqDO1JveST7vEyC359MHj8E6Dlydf/+upFFfKLOXRHspHsaNyJ7Oc8U='
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+    properties:
+      hibernate:
+          generate_statistics: true
+          default_schema: public
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          jdbc:
+            batch_size: 25
+            time_zone: UTC
+            lob:
+              non_contextual_creation: true
+          
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
