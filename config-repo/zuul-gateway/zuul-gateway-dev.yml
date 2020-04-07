@@ -1,4 +1,7 @@
 spring:
+  cloud:
+    gcp:
+      project-id: aashayein
   rabbitmq:
     host: localhost
     port: 5672
