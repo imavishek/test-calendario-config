@@ -1,7 +1,7 @@
 spring:
   cloud:
     gcp:
-      project-id: aashayein
+      project-id: calendario-273709
   rabbitmq:
     host: localhost
     port: 5672

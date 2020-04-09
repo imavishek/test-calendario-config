@@ -1,7 +1,7 @@
 spring:
   cloud:
     gcp:
-      project-id: aashayein
+      project-id: calendario-273709
       sql:
         enabled: false
   rabbitmq:

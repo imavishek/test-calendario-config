@@ -1,7 +1,7 @@
 spring:
   cloud:
     gcp:
-      project-id: aashayein
+      project-id: calendario-273709
   rabbitmq:
     host: rabbitmq
     port: 5672
@@ -32,6 +32,10 @@ zuul:
     config-server:
       path: /1.0/config-server/**
       url: http://config-server/
+      strip-prefix: true
+    zipkin-server:
+      path: /1.0/zipkin-server/**
+      url: http://zipkin-server/
       strip-prefix: true 
 
   management:
