@@ -31,7 +31,7 @@ spring:
 #       strip-prefix: true
 
 zuul:
-  sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  sensitiveHeaders: Cookie,Set-Cookie
   ignoredServices: '*'
   routes:
     config-server:
@@ -39,18 +39,22 @@ zuul:
       url: http://config-server/
     zipkin:
       path: /zipkin/**
-      url: http://zipkin/
+      serviceId: zipkin
     rabbitmq:
       path: /rabbitmq/**
-      serviceId: users
+      serviceId: rabbitmq
 
 ribbon: 
   eureka: 
     enabled: false
 
-users:
+rabbitmq:
   ribbon:
-    listOfServers: http://rabbitmq
+    server: http://rabbitmq
+
+zipkin:
+  ribbon:
+    server: http://zipkin
 
   management:
     endpoints:
