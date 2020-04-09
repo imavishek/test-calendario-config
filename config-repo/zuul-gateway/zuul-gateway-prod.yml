@@ -40,16 +40,16 @@ zuul:
     zipkin:
       path: /zipkin/**
       url: http://zipkin/
-    rabbit-mq:
+    rabbitmq:
       path: /rabbitmq/**
-      serviceId: rabbit-mq
-
+      serviceId: users
+      strip-prefix: true
 
 ribbon: 
   eureka: 
     enabled: false
 
-rabbit-mq:
+users:
   ribbon:
     listOfServers: http://rabbitmq
 
