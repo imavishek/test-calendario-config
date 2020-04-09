@@ -43,6 +43,7 @@ zuul:
     rabbitmq:
       path: /rabbitmq/**
       url: http://rabbitmq/
+      strip-prefix: true
 
 ribbon: 
   eureka: 
