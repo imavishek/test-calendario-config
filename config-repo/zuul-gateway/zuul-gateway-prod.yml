@@ -29,17 +29,20 @@ zuul:
       path: /1.0/user-service/**
       url: http://user-service/
       strip-prefix: true
+
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  ignoredServices: '*'
+  routes:
     config-server:
-      path: /1.0/config-server/**
+      path: /config-server/**
       url: http://config-server/
     zipkin:
-      path: /1.0/zipkin/**
-      url: http://zipkin/zipkin
-      strip-prefix: true
+      path: /zipkin/**
+      url: http://zipkin/
     rabbitmq:
-      path: /1.0/rabbitmq/**
+      path: /rabbitmq/**
       url: http://rabbitmq/
-      strip-prefix: true
 
 ribbon: 
   eureka: 
