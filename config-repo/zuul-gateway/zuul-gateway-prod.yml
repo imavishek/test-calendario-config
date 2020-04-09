@@ -35,9 +35,11 @@ zuul:
     zipkin:
       path: /1.0/zipkin/**
       url: http://zipkin/zipkin
+      strip-prefix: true
     rabbitmq:
       path: /1.0/rabbitmq/**
       url: http://rabbitmq/
+      strip-prefix: true
 
 ribbon: 
   eureka: 
