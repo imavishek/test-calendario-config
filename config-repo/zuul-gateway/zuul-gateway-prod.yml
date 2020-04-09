@@ -50,11 +50,11 @@ ribbon:
 
 rabbitmq:
   ribbon:
-    server: http://rabbitmq
+    listOfServers: http://rabbitmq
 
 zipkin:
   ribbon:
-    server: http://zipkin
+    listOfServers: http://zipkin
 
 management:
   endpoints:
