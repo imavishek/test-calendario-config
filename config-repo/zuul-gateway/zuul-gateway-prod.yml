@@ -16,19 +16,19 @@ spring:
     sampler:
       probability: 1
 
-zuul:
-  sensitiveHeaders: Cookie,Set-Cookie
-  prefix: "/api"
-  ignoredServices: '*'
-  routes:
-    oauth-server:
-      path: /1.0/oauth-server/**
-      url: http://oauth-server/
-      strip-prefix: true
-    user-service:
-      path: /1.0/user-service/**
-      url: http://user-service/
-      strip-prefix: true
+# zuul:
+#   sensitiveHeaders: Cookie,Set-Cookie
+#   prefix: "/api"
+#   ignoredServices: '*'
+#   routes:
+#     oauth-server:
+#       path: /1.0/oauth-server/**
+#       url: http://oauth-server/
+#       strip-prefix: true
+#     user-service:
+#       path: /1.0/user-service/**
+#       url: http://user-service/
+#       strip-prefix: true
 
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
