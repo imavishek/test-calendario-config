@@ -16,42 +16,19 @@ spring:
     sampler:
       probability: 1
 
-# zuul:
-#   sensitiveHeaders: Cookie,Set-Cookie
-#   prefix: "/api"
-#   ignoredServices: '*'
-#   routes:
-#     oauth-server:
-#       path: /1.0/oauth-server/**
-#       url: http://oauth-server/
-#       strip-prefix: true
-#     user-service:
-#       path: /1.0/user-service/**
-#       url: http://user-service/
-#       strip-prefix: true
-
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
+  prefix: "/api"
   ignoredServices: '*'
   routes:
-    config-server:
-      path: /config-server/**
-      url: http://config-server/
-    zipkin:
-      path: /zipkin/**
-      url: http://zipkin/
-    rabbitmq:
-      path: /rabbitmq/**
-      serviceId: users
+    oauth-server:
+      path: /1.0/oauth-server/**
+      service-id: oauth-server
       strip-prefix: true
-
-ribbon: 
-  eureka: 
-    enabled: false
-
-users:
-  ribbon:
-    listOfServers: http://rabbitmq
+    user-service:
+      path: /1.0/user-service/**
+      service-id: user-service
+      strip-prefix: true
 
 management:
   endpoints:
