@@ -34,7 +34,7 @@ zuul:
       url: http://config-server/
     zipkin:
       path: /1.0/zipkin/**
-      url: http://zipkin/
+      url: http://zipkin/zipkin
     rabbitmq:
       path: /1.0/rabbitmq/**
       url: http://rabbitmq/
