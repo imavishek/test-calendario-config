@@ -43,7 +43,7 @@ ribbon:
   ConnectTimeout: 15000
   ReadTimeout: 35000
   eureka: 
-    enabled: true
+    enabled: false
 
 management:
   endpoints:
