@@ -32,10 +32,9 @@ zuul:
     config-server:
       path: /1.0/config-server/**
       url: http://config-server/
-    zipkin-server:
-      path: /1.0/zipkin-server/**
+    zipkin:
+      path: /1.0/zipkin/**
       url: http://zipkin/
-      strip-prefix: true
     rabbitmq:
       path: /1.0/rabbitmq/**
       url: http://rabbitmq/
