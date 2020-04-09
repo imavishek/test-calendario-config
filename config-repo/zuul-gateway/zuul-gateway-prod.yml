@@ -30,6 +30,21 @@ zuul:
       service-id: user-service
       strip-prefix: true
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 100000
+
+ribbon: 
+  ConnectTimeout: 15000
+  ReadTimeout: 35000
+  eureka: 
+    enabled: true
+
 management:
   endpoints:
     web:
