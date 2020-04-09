@@ -39,22 +39,19 @@ zuul:
       url: http://config-server/
     zipkin:
       path: /zipkin/**
-      serviceId: zipkin
-    rabbitmq:
+      url: http://zipkin/
+    rabbit-mq:
       path: /rabbitmq/**
-      serviceId: rabbitmq
+      serviceId: rabbit-mq
+
 
 ribbon: 
   eureka: 
     enabled: false
 
-rabbitmq:
+rabbit-mq:
   ribbon:
     listOfServers: http://rabbitmq
-
-zipkin:
-  ribbon:
-    listOfServers: http://zipkin
 
 management:
   endpoints:
