@@ -56,9 +56,9 @@ zipkin:
   ribbon:
     server: http://zipkin
 
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
   
