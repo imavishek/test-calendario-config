@@ -48,6 +48,8 @@ credential:
     password: '{cipher}AQCc3nzLjcguTtqIIeSevZZR7JdGG/4jq6+wdaAyVvmsC3La91sPujH4AZ06V91TLrbHmM6ef+mZGXhhSrQoI9IbvkLmggydSPPoMQnIYJe7DUQPpyavoD7xszBuAroPRHtVRnd1UD5dPmmUb9jH4zuK31RUDIBVRZ0+rZOQc4YIt21oHUrFZTSip7jwLmWRqfrlpbYa/4MLI4RkuCvvo3g17Nt2IdQWJVn+ou8XUPB71dOmuqPF35AjCCJgm629h1xrZcFTY9frAAeVwM7FAUpn99ajCVqhNUtWJeIVwG3tuNkCjLeHJp90pjykrt81CquHH0fF3/1fVkU2DgelHfMu+wxevkUSSuHA86UFaQ3hWxbgN37e4+5pV1dQhjkAK+s='
 
 eureka:
+  instance:
+    hostname: ${spring.application.name}
   client:
     region: default
     registry-fetch-interval-seconds: 10

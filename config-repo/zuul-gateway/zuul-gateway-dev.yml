@@ -34,7 +34,7 @@ credential:
       
 eureka:
   instance:
-    hostname: zuul-gatweway
+    hostname: ${spring.application.name}
   client:
     region: default
     registry-fetch-interval-seconds: 10
@@ -49,6 +49,11 @@ hystrix:
           strategy: THREAD
           thread:
             timeoutInMilliseconds: 100000
+
+zuul:
+  ribbon:
+    eager-load:
+      enabled: true
 
 ribbon: 
   ConnectTimeout: 15000
