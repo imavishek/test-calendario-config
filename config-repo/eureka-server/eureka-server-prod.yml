@@ -14,9 +14,9 @@ spring:
 
 eureka:
   instance:
-    hostname: eureka-server
+    hostname: ${spring.application.name}
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@eureka-server/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}/eureka/
