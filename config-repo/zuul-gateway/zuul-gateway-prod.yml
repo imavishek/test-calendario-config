@@ -26,6 +26,10 @@ zuul:
       path: /1.0/user-service/**
       service-id: user-service
       strip-prefix: true
+    config-server:
+      path: /1.0/config-server/**
+      service-id: config-server
+      strip-prefix: true
 
 credential:
   eureka:
