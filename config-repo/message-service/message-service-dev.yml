@@ -1,14 +1,13 @@
 spring:
   cloud:
     gcp:
-      project-id: calendario-273709
       sql:
         enabled: false
   rabbitmq:
     host: localhost
     port: 5672
     virtual-host: calendario_vhost
-    username: calendario
+    username: '{cipher}AQAE54S8OasZaz0/tDMT3hkBeILRc3TXp7S/ysdc93sevcx+bjJfVkfD0DRpBjM9z5z4CpXK7/jE4HkEwL1zTTF506oqHGliXtlx/lwcyRSQv5Y4R7tCXfOyEE5bIZgiaNenMzNH+T7Wv3EYr1lJr0GVoqh7frSxj4oHomrH4AZbwE7N4uGrbzjDuPk6+vkXCt5fy7ahq94DTmALmMl02ljIlWDcLLot3sIN3Vp+Tr1dUKvCXvoXWlnBYLii1zaizosGyfgErV5OpToVNBQgnOnW/Y+JNtR4jrCbaLN6neCJ09eien3woqfla7N224+0mDJ1D/ftHyC3+InH5tvZqSQ/veSDtKxYHKzat27e9rv0YkJiXKHzgWdqZ05S+eXr0zw='
     password: '{cipher}AQAZQkOBaKZm3WWO2PD6jkC/pFPnzJMNc3LoBQvoCfytVy3+8Pq7T6C+IGO5PEZTBqu+SReNQO5D40IIfJEbMWPbWnussdRoJiNib6ftthIzBk9P72B1J98EWmQtT9Kxnr8qUo5NCJw5FXjFjqFBtsz9uHayK7W4pSbvcjvrFK1dqZcLBuVvvj0F7RLD8m0/RE3CgXmelGODAG9MoheTQTASc26JXQViHLKqdR5IWpg2CRLgXzGLNo9YlFyJzEKYPt4P5avAaGMRW23fP8fsi6SaKar48QZv6QO5EWgZil1E7XikKyPii3aO75AWYzNG8jThDPJINTstiqDO1JveST7vEyC359MHj8E6Dlydf/+upFFfKLOXRHspHsaNyJ7Oc8U='
   zipkin:
     base-url: 'http://localhost:8033'
@@ -40,8 +39,31 @@ spring:
             lob:
               non_contextual_creation: true
           
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+credential:
+  eureka:
+    username: '{cipher}AQCc3nzLjcguTtqIIeSevZZR7JdGG/4jq6+wdaAyVvmsC3La91sPujH4AZ06V91TLrbHmM6ef+mZGXhhSrQoI9IbvkLmggydSPPoMQnIYJe7DUQPpyavoD7xszBuAroPRHtVRnd1UD5dPmmUb9jH4zuK31RUDIBVRZ0+rZOQc4YIt21oHUrFZTSip7jwLmWRqfrlpbYa/4MLI4RkuCvvo3g17Nt2IdQWJVn+ou8XUPB71dOmuqPF35AjCCJgm629h1xrZcFTY9frAAeVwM7FAUpn99ajCVqhNUtWJeIVwG3tuNkCjLeHJp90pjykrt81CquHH0fF3/1fVkU2DgelHfMu+wxevkUSSuHA86UFaQ3hWxbgN37e4+5pV1dQhjkAK+s='
+    password: '{cipher}AQCc3nzLjcguTtqIIeSevZZR7JdGG/4jq6+wdaAyVvmsC3La91sPujH4AZ06V91TLrbHmM6ef+mZGXhhSrQoI9IbvkLmggydSPPoMQnIYJe7DUQPpyavoD7xszBuAroPRHtVRnd1UD5dPmmUb9jH4zuK31RUDIBVRZ0+rZOQc4YIt21oHUrFZTSip7jwLmWRqfrlpbYa/4MLI4RkuCvvo3g17Nt2IdQWJVn+ou8XUPB71dOmuqPF35AjCCJgm629h1xrZcFTY9frAAeVwM7FAUpn99ajCVqhNUtWJeIVwG3tuNkCjLeHJp90pjykrt81CquHH0fF3/1fVkU2DgelHfMu+wxevkUSSuHA86UFaQ3hWxbgN37e4+5pV1dQhjkAK+s='
+      
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    region: default
+    registry-fetch-interval-seconds: 10
+    serviceUrl:
+      defaultZone: http://${credential.eureka.username}:${credential.eureka.password}@localhost:8030/eureka/
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 100000
+
+ribbon: 
+  ConnectTimeout: 15000
+  ReadTimeout: 35000
+  eureka: 
+    enabled: true
