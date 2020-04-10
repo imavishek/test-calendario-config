@@ -34,7 +34,7 @@ credential:
 
 eureka:
   instance:
-    hostname: ${spring.application.name}
+    prefer-ip-address: true
   client:
     region: default
     registry-fetch-interval-seconds: 10
