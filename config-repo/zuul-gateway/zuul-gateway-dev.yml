@@ -34,7 +34,7 @@ credential:
       
 eureka:
   instance:
-    hostname: zuul-gateway
+    hostname: ${spring.application.name}
   client:
     region: default
     registry-fetch-interval-seconds: 10
