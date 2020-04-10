@@ -50,11 +50,6 @@ hystrix:
           thread:
             timeoutInMilliseconds: 100000
 
-zuul:
-  ribbon:
-    eager-load:
-      enabled: true
-
 ribbon: 
   ConnectTimeout: 15000
   ReadTimeout: 35000
